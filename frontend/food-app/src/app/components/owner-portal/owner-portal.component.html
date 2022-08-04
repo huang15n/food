@@ -1,0 +1,399 @@
+
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+ 
+<main class="mt-5 pt-3">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Your {{owner.restaurant.restuarantName}}</h1>
+     
+                
+          
+        </div>
+ 
+      </div>
+
+      <div class = "row">
+    <div class = "col-md-12">
+         
+    </div>
+        </div>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card bg-primary text-white h-100">
+            <div class="card-body py-5">
+                <h6>First Name: {{owner.firstName}}</h6>
+                <h6>Last Name: {{owner.lastName}}</h6>
+                <h6>City: {{owner.restaurant.city}}</h6>
+                <h6>Province: {{owner.restaurant.province}}</h6>
+                <h6>Address: {{owner.restaurant.address}}</h6>
+                <h6>Email: {{owner.email}}</h6>
+                <h6>Phone: {{owner.phone}}</h6>
+
+                <h6>Restaurant ID: {{owner.restaurant.id}}</h6>
+
+                <h6>owner ID: {{owner.id}}</h6>
+
+            </div>
+            <div class="card-footer d-flex">
+             Profile
+              <span class="ms-auto">
+                <i class="bi bi-chevron-right"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card bg-warning text-dark h-100">
+            <div class="card-body py-5">
+
+
+              <h3> Create Menu </h3>
+
+
+              <form (ngSubmit)="createMenu()">
+
+                <div class="form-group">
+                  <label for="name">Food Name</label>
+                  <input type="text" class="form-control" id="foodName" required [(ngModel)]="food.foodName" name="firstName">
+                </div>
+
+                <div class="form-group">
+                  <label for="description">Food Description</label>
+                  <input type="text" class="form-control" id="foodDescription" required [(ngModel)]="food.foodDescription" name="foodDescription">
+                </div>
+
+
+                <div class="form-group">
+                  <label for="image_url">Image URL</label>
+                  <input type="text" class="form-control" id="image_url" required [(ngModel)]="food.image_url" name="image_url">
+                </div>
+
+
+                <div class="form-group">
+                  <label for="price">Price</label>
+                  <input type="text" class="form-control" id="price" required [(ngModel)]="food.price" name="price">
+                </div>
+
+
+
+                <div class="form-group">
+                  <label for="stock">Stock</label>
+                  <input type="text" class="form-control" id="stock" required [(ngModel)]="food.stock" name="stock">
+                </div>
+
+
+
+                <div class="form-group">
+                  <label for="quantity">Quantity</label>
+                  <input type="text" class="form-control" id="quantity" required [(ngModel)]="food.quantity" name="quantity">
+                </div>
+
+
+                <div class="form-group">
+                  <label for="category">Category</label>
+                  <input type="text" class="form-control" id="category" required [(ngModel)]="category_id" name="category">
+                </div>
+
+
+                <div class="form-group">
+                 
+                  <input type="submit" class="btn btn-info" name = "Create Menu">
+                </div>
+
+
+
+                </form>
+
+
+
+
+
+
+            </div>
+            <div class="card-footer d-flex">
+                Add Menu
+              <span class="ms-auto">
+                <i class="bi bi-chevron-right"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card bg-success text-white h-100">
+            <div class="card-body py-5">
+
+              <h3> Hire Employee </h3>
+
+              <form (ngSubmit)="hireEmployee()">
+
+                <div class="form-group">
+                  <label for="fname">First Name</label>
+                  <input type="text" class="form-control" id="firstName" required [(ngModel)]="employee.firstName" name="firstName">
+                </div>
+
+                <div class="form-group">
+                  <label for="lname">Last Name</label>
+                  <input type="text" class="form-control" id="lastName" required [(ngModel)]="employee.lastName" name="lastName">
+                </div>
+
+
+                <div class="form-group">
+                  <label for="uname">Username</label>
+                  <input type="text" class="form-control" id="username" required [(ngModel)]="employee.username" name="username">
+                </div>
+
+
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" required [(ngModel)]="employee.password" name="password">
+                </div>
+
+
+
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" required [(ngModel)]="employee.email" name="email">
+                </div>
+
+
+
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="phone" class="form-control" id="phone" required [(ngModel)]="employee.phone" name="phone">
+                </div>
+
+
+                <div class="form-group">
+                  <label for="salary">Salary</label>
+                  <input type="salary" class="form-control" id="salary" required [(ngModel)]="employee.salary" name="salary">
+                </div>
+
+
+                <div class="form-group">
+                 
+                  <input type="submit" class="btn btn-info" name = "Hire">
+                </div>
+
+
+
+                </form>
+
+
+
+
+
+
+
+
+            </div>
+
+
+            <div class="card-footer d-flex">
+              Hire Employees
+              <span class="ms-auto">
+                <i class="bi bi-chevron-right"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+       
+
+
+
+      </div>
+      <!-- <div class="row">
+        <div class="col-md-6 mb-3">
+          <div class="card h-100">
+            <div class="card-header">
+              <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+              Area Chart Example
+
+
+
+              
+            </div>
+            <div class="card-body">
+   
+
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="card h-100">
+            <div class="card-header">
+              <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
+              Area Chart Example
+            </div>
+            <div class="card-body">
+
+              <h1> chart here</h1>
+            
+             
+              <canvas id="myChart" width="400" height="400"></canvas>
+              <script>
+              const ctx = document.getElementById('myChart').getContext('2d');
+              const myChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                      datasets: [{
+                          label: '# of Votes',
+                          data: [12, 19, 3, 5, 2, 3],
+                          backgroundColor: [
+                              'rgba(255, 99, 132, 0.2)',
+                              'rgba(54, 162, 235, 0.2)',
+                              'rgba(255, 206, 86, 0.2)',
+                              'rgba(75, 192, 192, 0.2)',
+                              'rgba(153, 102, 255, 0.2)',
+                              'rgba(255, 159, 64, 0.2)'
+                          ],
+                          borderColor: [
+                              'rgba(255, 99, 132, 1)',
+                              'rgba(54, 162, 235, 1)',
+                              'rgba(255, 206, 86, 1)',
+                              'rgba(75, 192, 192, 1)',
+                              'rgba(153, 102, 255, 1)',
+                              'rgba(255, 159, 64, 1)'
+                          ],
+                          borderWidth: 1
+                      }]
+                  },
+                  options: {
+                      scales: {
+                          y: {
+                              beginAtZero: true
+                          }
+                      }
+                  }
+              });
+              </script>
+
+
+          
+
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="row">
+        <div class="col-md-12 mb-3">
+          <div class="card">
+            <div class="card-header">
+              <span><i class="bi bi-table me-2"></i></span> Current Employees
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table
+                  id="example"
+                  class="table table-striped data-table"
+                  style="width: 100%"
+                >
+                  <thead>
+                    <tr>
+                        <th>Employee ID</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Username</th>
+                      <th>Password</th>
+                      
+              
+                      <th>Start date</th>
+                      <th>Salary</th>
+                      <th>Dismissal </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor = "let employee of owner.employees">
+                        <td>{{employee.id}}</td>
+                      <td>{{employee.firstName}}</td>
+                      <td>{{employee.lastName}}</td>
+                      <td>{{employee.username}}</td>
+                      <td>{{employee.password}}</td>
+                      
+                      <td>{{employee.startDate}}</td>
+                    
+                      <td>${{employee.salary}}</td>
+
+                      <td> <button class = "btn btn-outline-danger" (click) = "fireEmployee(employee.id)"> Dimiss </button></td>
+                    </tr>
+             
+                  </tbody>
+                 
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-md-12 mb-3">
+          <div class="card">
+            <div class="card-header">
+              <span><i class="bi bi-table me-2"></i></span> Menus
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table
+                  id="example"
+                  class="table table-striped data-table"
+                  style="width: 100%"
+                >
+                  <thead>
+                    <tr>
+                        <th>Food ID</th>
+                      <th>Name</th>
+                      <th>Description</th>
+                      <th>price</th>
+                      <th>quantity</th>
+                      
+              
+                      <th>image url</th>
+                      <th>stock</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor = "let food of food_list">
+                        <td>{{food.id}}</td>
+                      <td>{{food.foodName}}</td>
+                      <td>{{food.foodDescription}}</td>
+                      <td>{{food.price}}</td>
+                      <td>{{food.quantity}}</td>
+                      
+                      <td>{{food.image_url}}</td>
+                    
+                      <td>${{food.stock}}</td>
+
+                      <td> <button class = "btn btn-outline-danger" (click) = "deleteFood(food.id)"> Delete </button></td>
+                    </tr>
+             
+                  </tbody>
+                 
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+    </div>
+  </main>
+
+  <script
+  src="https://www.gstatic.com/charts/loader.js">
+  </script>

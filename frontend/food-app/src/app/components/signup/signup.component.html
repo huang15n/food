@@ -1,0 +1,134 @@
+ 
+ 
+
+    <div class="container">
+        <div class="col-md-6 mx-auto text-center">
+           <div class="header-title">
+              <h1 class="wv-heading--title">
+               Join our Food Journey today!
+              </h1>
+              <h2 class="wv-heading--subtitle">
+               find out what you are eligble for a reward, please sign up now
+              </h2>
+           </div>
+        </div>
+        <div class="row">
+           <div class="col-md-4 mx-auto">
+              <div class="myform form ">
+                 <form [formGroup]="signUpFormGroup" (ngSubmit)="onSubmit()">
+                    <div formGroupName="customer" class = "form-area">
+
+                        
+                        <div class="form-group" >
+                            <input type="text" formControlName = "email"  class="form-control my-input" placeholder="Email">
+                        
+                            <div *ngIf = "email?.invalid && (email?.dirty || email?.touched)" class = "alert alert-danger">
+                                <div *ngIf="email?.hasError('required') ">
+                              
+                                  email is required 
+                                  </div>
+                                  <div *ngIf="email?.hasError('minlength') || email?.hasError('pattern')">
+                                       email is invalid
+                                      </div>
+                                      </div>
+                        
+                        </div>
+
+                         <div class="form-group" >
+                            <input type="text" formControlName = "username"  class="form-control my-input" placeholder="Username">
+                            <div *ngIf = "username?.invalid && (username?.dirty || username?.touched)" class = "alert alert-danger">
+                                <div *ngIf="username?.hasError('required') || username?.hasError('notOnlyWhitespace')">
+                              
+                                  username is required 
+                                  </div>
+                                  <div *ngIf="username?.hasError('minlength')">
+                                    username must be at least 5 characters long 
+                                      </div>
+                                      </div>
+                         
+                        </div>
+
+                         <div class="form-group" >
+                            <input type="password" formControlName = "password"  class="form-control my-input" placeholder="Password">
+                            <div *ngIf = "password?.invalid && (password?.dirty || password?.touched)" class = "alert alert-danger">
+                                <div *ngIf="password?.hasError('required') || password?.hasError('notOnlyWhitespace')">
+                              
+                                  password is required 
+                                  </div>
+                                  <div *ngIf="password?.hasError('minlength')">
+                                     password is not safe
+                                      </div>
+                                      </div>
+                        
+                        </div>
+
+                          
+                        <div class="form-group" >
+                            <input type="text" formControlName = "firstName"  class="form-control my-input" id="fname" placeholder="First Name">
+                            <div *ngIf = "firstName?.invalid && (firstName?.dirty || firstName?.touched)" class = "alert alert-danger">
+                                <div *ngIf="firstName?.hasError('required') || firstName?.hasError('notOnlyWhitespace')">
+                              
+                                  FirstName is required 
+                                  </div>
+                                  <div *ngIf="firstName?.hasError('minlength')">
+                                     First Name must be at least 2 characters long 
+                                      </div>
+                                      </div>
+                        
+                        </div>
+
+ 
+ 
+                        <div class="form-group" >
+                            <input type="text" formControlName = "lastName"  class="form-control my-input" id="lname" placeholder="Last Name">
+                        
+
+                            <div *ngIf = "lastName?.invalid && (lastName?.dirty || lastName?.touched)" class = "alert alert-danger">
+                                <div *ngIf="lastName?.hasError('required') || lastName?.hasError('notOnlyWhitespace')">
+                              
+                                  lastName is required 
+                                  </div>
+                                  <div *ngIf="lastName?.hasError('minlength')">
+                                     First Name must be at least 2 characters long 
+                                      </div>
+                                      </div>
+                        
+                        
+                        </div>
+
+
+                         <div class="form-group" >
+                            <input type="text" formControlName = "phone"  class="form-control my-input" id="phone" placeholder="Phone Number">
+                            <div *ngIf = "phone?.invalid && (phone?.dirty || phone?.touched)" class = "alert alert-danger">
+                                <div *ngIf="phone?.hasError('required') ">
+                              
+                                  phone is required 
+                                  </div>
+                                  <div *ngIf="phone?.hasError('minlength') || phone?.hasError('pattern')">
+                                       phone must be 9 digits
+                                      </div>
+                                      </div>
+                        
+                        
+                        </div>
+
+ 
+
+                    <div class="text-center ">
+                       <button type="submit" class=" btn btn-block send-button tx-tfm" >Create Your Free Account</button>
+                    </div>
+
+               
+   
+                   
+                    <p class="small mt-3">By signing up, you are indicating that you have read and agree to the <a href="#" class="ps-hero__content__link">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+                    </p>
+
+
+                    </div>
+                 </form>
+              </div>
+           </div>
+        </div>
+     </div>
+   

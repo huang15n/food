@@ -1,0 +1,101 @@
+
+ 
+ 
+ 
+    <div class="row">
+     
+    <app-category-menu>
+
+    
+    </app-category-menu> 
+   
+
+     
+            <div class="row content">
+
+           
+                <div class=" col-md-6 col-lg-4" *ngFor = "let food of foods">
+                    <div class="card">
+                        <img width="200" height = "300" class="card-img-top shadow-none p-3 mb-5 bg-light rounded" src={{food.image_url}} alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title"><a routerLink="/food/{{food.id}}" title="View Product">{{food.foodName}}</a></h4>
+                            <p class="card-text">{{food.foodDescription}}</p>
+                            <div class="row">
+                                <div class="col">
+                                    <p>{{food.price}} $</p>
+                                </div>
+                                <div class="col">
+                                    <p>      {{food.stock}} in stock</p>
+                                </div>
+
+                                <div class = "col">
+
+                                  <button type="button" class="btn btn-success" (click)="addToCart(food)">Add to Cart</button>
+
+                                </div>
+                             
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+          
+                <div *ngIf = "foods?.length == 0" class = "jumbotron jumbotron-fluid">
+                  <div class="container">
+                   <h1> Speciality </h1>
+                    <p class="lead">search your food by category or keyword</p>
+                  </div>
+                  </div>
+ 
+         
+          
+
+    <div>
+
+
+
+
+        <!--pagination-->
+
+        <div class = "content justify-content-center">
+        <ngb-pagination
+        [(page)]="thePageNumber"
+        [pageSize]="thePageSize"
+        [collectionSize]="theTotalElements"
+        [maxSize]="5"
+        (pageChange)="listFood()"
+        [boundaryLinks]="true"
+        
+        >
+          </ngb-pagination>
+
+
+          <select (change)="updatePageSize($event)">
+            <option selected="true">3 </option>
+            <option>10</option>
+            <option>20</option>
+              </select>
+
+          </div>
+  
+       
+            <!-- <nav class = "content">
+                <ul class="pagination">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">2 </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav> -->
+        </div>
+    </div>
+ 
+        </div>
+        <!--pagination-->

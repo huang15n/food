@@ -1,0 +1,156 @@
+<section class="vh-100" style="background-color: #9A616D;min-height: 800px;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <div class="card-body p-4 p-lg-5 text-black">
+                <form [formGroup]="loginFormGroup" (ngSubmit)="RestaurantLogin()">
+                  <div class="alert alert-danger" *ngIf = "showWarning">
+                    <strong>your credential is wrong!</strong> Username or Password is invalid
+                  </div>
+
+                  
+                <div  formGroupName="owner" class="form-group">
+                <div class="d-flex align-items-center mb-3 pb-1">
+                  <i class="fas fa-hamburger fa-2x me-3" style="color: #ff6219;"></i>
+                  <span class="h1 fw-bold mb-0">Restaurant Personel</span>
+                </div>
+
+                <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="ownerUsername" class="form-control form-control-lg" formControlName = "ownerUsername" />
+                  <label class="form-label" for="ownerUsername">Username</label>
+                  <div *ngIf = "ownerUsername?.invalid && (ownerUsername?.dirty || ownerUsername?.touched)" class = "alert alert-danger">
+                    <div *ngIf="ownerUsername?.hasError('required') || ownerUsername?.hasError('notOnlyWhitespace')">
+                  
+                      username is required 
+                      </div>
+                      <div *ngIf="ownerUsername?.hasError('minlength')">
+                        username must be at least 5 characters long 
+                          </div>
+                          </div>
+             
+               
+               
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" formControlName = "ownerPassword"  class="form-control form-control-lg" />
+                  <label class="form-label" for="ownerPassword">Password</label>
+                  <div *ngIf = "ownerPassword?.invalid && (ownerPassword?.dirty || ownerPassword?.touched)" class = "alert alert-danger">
+                    <div *ngIf="ownerPassword?.hasError('required') || ownerPassword?.hasError('notOnlyWhitespace')">
+                  
+                      password is required 
+                      </div>
+                      <div *ngIf="ownerPassword?.hasError('minlength')">
+                         password is not safe
+                          </div>
+                          </div> 
+               
+                </div>
+
+                <select   (change)="getOption($event)">
+             <option *ngFor="let x of options"> {{x}}</option>
+
+                  </select>
+
+            
+
+                <input value ="login" class=" btn-dark btn-lg btn-block" type="submit"> 
+
+ 
+
+            
+                <p class="mb-5 pb-lg-2" style="color: #9A616D">Ask the web administrator to create an account for your </p>
+      
+            
+                
+               
+
+            </div>
+                  </form>
+
+                  </div>
+               
+              </div>
+
+
+
+
+              <!-- user login -->
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+  
+                  <form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()">
+  
+                    <div class="alert alert-danger" *ngIf = "showWarning">
+                        <strong>your credential is wrong!</strong> Username or Password is invalid
+                      </div>
+
+                      
+                    <div  formGroupName="customer" class="form-group">
+                    <div class="d-flex align-items-center mb-3 pb-1">
+                      <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                      <span class="h1 fw-bold mb-0">Customer</span>
+                    </div>
+  
+                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+  
+                    <div class="form-outline mb-4">
+                      <input type="text" id="username" class="form-control form-control-lg" formControlName = "username" />
+                      <label class="form-label" for="username">Username</label>
+                      <div *ngIf = "username?.invalid && (username?.dirty || username?.touched)" class = "alert alert-danger">
+                        <div *ngIf="username?.hasError('required') || username?.hasError('notOnlyWhitespace')">
+                      
+                          username is required 
+                          </div>
+                          <div *ngIf="username?.hasError('minlength')">
+                            username must be at least 5 characters long 
+                              </div>
+                              </div>
+                 
+                   
+                   
+                    </div>
+  
+                    <div class="form-outline mb-4">
+                      <input type="password" formControlName = "password"  class="form-control form-control-lg" />
+                      <label class="form-label" for="password">Password</label>
+                      <div *ngIf = "password?.invalid && (password?.dirty || password?.touched)" class = "alert alert-danger">
+                        <div *ngIf="password?.hasError('required') || password?.hasError('notOnlyWhitespace')">
+                      
+                          password is required 
+                          </div>
+                          <div *ngIf="password?.hasError('minlength')">
+                             password is not safe
+                              </div>
+                              </div> 
+                   
+                    </div>
+  
+                    <input value ="login" class=" btn-dark btn-lg btn-block" type="submit"> 
+
+     
+  
+                
+                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a routerLink="/signup" style="color: #393f81;">Register here</a></p>
+                    <a href="#!" class="small text-muted">Terms of use.</a>
+                    <a href="#!" class="small text-muted">Privacy policy</a>
+                
+                    
+                   
+
+                </div>
+                </form>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

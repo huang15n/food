@@ -1,0 +1,23 @@
+nav{
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+
+
+ul{
+    list-style: none;
+}
+li{
+    margin-bottom: 5%;
+}
+
+.jumbotron{
+    min-height: 400px;
+    text-align: center;
+}
+
+.justify-content-center {
+    display: flex !important;
+    justify-content: center !important;
+}

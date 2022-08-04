@@ -1,0 +1,34 @@
+ 
+
+<!-- menu bar-->
+ 
+ 
+ 
+
+    
+  
+
+ 
+ 
+
+  <!-- menu bar-->
+     
+
+
+<!--search box -->
+ 
+<!--search box -->
+
+    <div class="card bg-light mb-3">
+        <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
+        <ul class="list-group category_block">
+            <li class="list-group-item"  *ngFor="let category of categories"><a  routerLink="/category/{{category.id}}" routerLinkActive="active-link" >{{category.categoryName}}</a></li>
+           <!-- <li>  <app-search></app-search>  
+           </li> -->
+        </ul>
+
+      
+    </div>
+
+  
+ 

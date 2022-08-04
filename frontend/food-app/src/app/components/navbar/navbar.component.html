@@ -1,0 +1,64 @@
+
+  <!-- navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+          <li class="nav-item" *ngFor = "let item of restaurantList">
+            <a class="nav-link" routerLink="/category/427" routerLinkActive="active-link">{{item.restuarantName}}</a>
+          </li>
+
+          
+         
+     
+        </ul>
+
+        <div class="d-flex">
+          <app-cart-status></app-cart-status>
+
+          </div>
+
+        <div class="d-flex">
+
+          <div *ngIf="logout==true">
+            <a routerLink = "" class="btn btn-outline-warning btn-lg btn-block" type="submit">Log out</a>
+            </div>
+
+          <div *ngIf="logout==false">
+          <a routerLink = "login" class="btn btn-outline-info btn-lg btn-block" type="submit">Log In</a>
+          </div>
+   
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- navbar -->
+
+
+  <!-- banner -->
+
+  <div class="jumbotron jumbotron-fluid banner">
+    <div class="container">
+      <h1>Food Master</h1>
+      <p>Search your favorite food today!</p>
+     
+      <div class="form-group has-search">
+      
+        <input type="text" class="form-control" placeholder="Search" #keyWord   (keyup.enter) = "search(keyWord.value)">
+       
+      </div>
+      <a class="btn btn-success col-6 search"  href="#" role="button" (click)="search(keyWord.value)"> <span class="fa fa-search form-control-feedback"></span>Search</a>
+
+    </div>
+  </div>
+
+<!--banner-->
+  
+  

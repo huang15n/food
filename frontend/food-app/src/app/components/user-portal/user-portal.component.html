@@ -1,0 +1,159 @@
+<div class="container emp-profile">
+    
+
+    
+     
+        <div class="row">
+           
+            <div class="col-md-6">
+                <div class="profile-head">
+                         
+                          
+                              
+                             
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#order" type="button" role="tab" aria-controls="order" aria-selected="false">Orders</button>
+                          </li>
+                    </ul>
+                </div>
+            </div>
+         
+        </div>
+        <div class="row">
+           
+            <div class="col-md-12">
+                <div>
+
+
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>User Id</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{user.username}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{user.firstName}}  {{user.lastName}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{user.email}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Balance</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{user.balance}}</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Total Spent</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{user.moneySpent}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Phone</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{user.phone}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Being a member since:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{user.accountCreated}}</p>
+                                    </div>
+                                </div>
+                    </div>
+
+
+                    <!-- home -->
+
+
+                    <!-- orders -->
+
+
+                    <div class="tab-pane fade show" id="order" role="tabpanel" aria-labelledby="home-tab">
+                    
+                 
+
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Created</th>
+                                <th scope="col">Last Updated</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Total Price </th>
+                                <th scope="col">Total Quantity </th>
+                                <th scope="col">Operation </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor = "let item of order">
+
+                                
+                               
+                              
+                                
+                               
+                                <td>{{item.dateCreated}}</td>
+                                <td>{{item.lastUpdated}}</td>
+                                <td >
+                                    <div *ngIf = "item.status === null;"> 
+                                        Order Placed
+                                        </div>
+                                        <div>
+                                            {{item.status}}
+                                            </div>
+                                </td>
+                                <td>{{item.totalPrice}}</td>
+                                <td>{{item.totalQuantity}}</td>
+                                <td> <button class = "btn  btn-danger" (click)="deleteOrder(item.id)" > Cancel Order</button></td>
+
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+
+
+
+
+
+
+
+                        </div>
+
+                    <!-- orders -->
+                    
+                </div>
+            </div>
+        </div>
+             
+</div>
