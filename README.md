@@ -8,6 +8,7 @@ My intent is to build a realtime food ordering app simulates uber eats for Carle
 #### Please refer to my Java and Js Repo in my github if you have not done programming in these two languages https://github.com/huang15n/javascript/tree/main/javascript_crash
 
 #### Please refer to my TypeScprit, Spring.md and Angular.md notes in this repo if you do not have any exposures to use the front end and backend framework -- Eddie Huang
+https://github.com/huang15n/food/blob/master/angular.md
 
 ## Technology involved Angular front-end <-> spring boot backend <-> Full CRUD 
 
