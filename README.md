@@ -2,15 +2,17 @@
 
 # Preview 
 
-Our intent is to build a realtime food ordering app which has full stack
+My intent is to build a realtime food ordering app simulates uber eats for Carleton, Nepean, Kanata, and Downtown Ottawa which has full stack capability of handling restaurant functionalities.
 
-Angular front-end <-> spring boot backend <-> Full CRUD 
+## Please review my Spring.md and Angular.md if you do not have any idea of building the front end and backend -- Eddie
+
+## Technology involved Angular front-end <-> spring boot backend <-> Full CRUD 
 
 the spring boot leverages the data REST for REST API in order to minize the coding for spring boot backend 
 
 
 
-## requirement 
+## User requirement 
 
 
 we would like to show a list of food 
