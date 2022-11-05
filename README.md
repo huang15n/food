@@ -4,7 +4,9 @@
 
 My intent is to build a realtime food ordering app simulates uber eats for Carleton, Nepean, Kanata, and Downtown Ottawa which has full stack capability of handling restaurant functionalities.
 
-## Please review my Spring.md and Angular.md if you do not have any idea of building the front end and backend -- Eddie
+
+#### Please refer to my Java and Js Repo in my github if you have not done programming in these two languages 
+#### Please refer to my TypeScprit, Spring.md and Angular.md notes in this repo if you do not have any exposures to use the front end and backend framework -- Eddie Huang
 
 ## Technology involved Angular front-end <-> spring boot backend <-> Full CRUD 
 
